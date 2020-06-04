@@ -120,7 +120,7 @@ class Welcome extends CI_Controller {
       } else {
          $this->load->helper("file");
          $path = './uploads/'.$this->input->post('e_img');
-         unlink($path);
+         if (file_exists($path)) unlink($path);
 
          $data = array(
             'nama_barang' => $this->input->post('e_nama_barang'),
