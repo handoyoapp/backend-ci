@@ -43,4 +43,26 @@ Class Mod_produk extends CI_Model
       $this->db->delete('barang');
       return TRUE;
    }
+
+   public function get_all_produk()
+   {
+      $this->db->order_by('id_barang', 'DESC');
+      $query = $this->db->get("barang");
+      if ($query->num_rows() > 0) {
+         $response = array();
+         $response['error'] = false;
+         $response['message'] = 'List Produk';
+         foreach ($query->result() as $row) {
+            $tempArray = array();
+            $tempArray['id_barang'] = $row->id_barang;
+            $tempArray['nama_barang'] = $row->nama_barang;
+            $tempArray['harga'] = $row->harga;
+            $tempArray['stok'] = $row->stok;
+            $tempArray['img'] = base_url() . 'uploads/' . $row->img;
+            $response['data'][] = $tempArray;
+         }
+         return $response;
+      }
+      return false;
+   }
 }
