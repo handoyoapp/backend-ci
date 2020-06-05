@@ -221,7 +221,7 @@ Akses Terakhir : 04 Juli 2018 &nbsp; <a href="<?php echo base_url();?>index.php/
       $('#e_harga').val(harga);
       $('#e_stok').val(stok);
       $('#e_img').val(img);
-      var path = service_url + 'uploads/' + img;
+      var path = img; //service_url + 'uploads/' + img;
       $('#e_imgView').attr('src', path);
       $('#modalEdit').modal('show'); 
    }
