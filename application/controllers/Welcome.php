@@ -89,7 +89,7 @@ class Welcome extends CI_Controller {
             'nama_barang' => $this->input->post('nama_barang'),
             'harga' => $this->input->post('harga'),
            'stok' => $this->input->post('stok'),
-            'img' => $this->upload->data('file_name')
+            'img' => base_url().'uploads/'.$this->upload->data('file_name')
          );
 
          $this->mod_produk->simpan_produk($data);
@@ -126,7 +126,7 @@ class Welcome extends CI_Controller {
             'nama_barang' => $this->input->post('e_nama_barang'),
             'harga' => $this->input->post('e_harga'),
             'stok' => $this->input->post('e_stok'),
-            'img' => 'http://127.0.0.1:8000/uploads/'.$this->upload->data('file_name')
+            'img' => base_url().'uploads/'.$this->upload->data('file_name')
          );
 
          $this->mod_produk->edit_produk($data,$id);
