@@ -23,7 +23,7 @@
          <a class="navbar-brand" href="<?php echo    base_url();?>index.php/welcome/welcome">BackEnd</a>
       </div>
       <div style="color: white;padding: 15px 50px 5px 50px;float: right;font-size: 16px;">
-Akses Terakhir : 04 Juli 2018 &nbsp; <a href="<?php echo base_url();?>index.php/welcome/welcome" class="btn btn-danger square-btn-adjust">Logout</a>
+Akses Terakhir : 04 Juli 2018 &nbsp; <a href="<?php echo base_url();?>login/logout" class="btn btn-danger square-btn-adjust">Logout</a>
       </div>
    </nav>
    <nav class="navbar-default navbar-side" role="navigation">

@@ -66,7 +66,13 @@ class Welcome extends CI_Controller {
       $data["links"] = $this->pagination->create_links();
       $data['page'] = $page;
 
-      $this->load->view('welcome',$data);
+      if($this->session->userdata('logged_in')) {
+         $this->load->view('welcome',$data);
+      }
+      else {
+         $this->load->helper(array('form'));
+         $this->load->view('login');
+      }
    }
 
    public function simpan_produk()
