@@ -53,12 +53,13 @@ Class Mod_produk extends CI_Model
          $response['error'] = false;
          $response['message'] = 'List Produk';
          foreach ($query->result() as $row) {
+            $harga = $row->harga;
             $tempArray = array();
-            $tempArray['id_barang'] = $row->id_barang;
+            $tempArray['id_barang'] = (int)$row->id_barang;
             $tempArray['nama_barang'] = $row->nama_barang;
-            $tempArray['harga'] = $row->harga;
-            $tempArray['stok'] = $row->stok;
-            $tempArray['img'] = base_url() . 'uploads/' . $row->img;
+            $tempArray['harga'] = (int)$harga;
+            $tempArray['stok'] = (int)$row->stok;
+            $tempArray['img'] = $row->img;
             $response['data'][] = $tempArray;
          }
          return $response;
