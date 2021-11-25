@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn' => '',
-	'hostname' => 'localhost:3306',
+	'hostname' => 'localhost',
 	'username' => 'root',
-	'password' => 'password',
-	'database' => 'dbtoko_online',
+	'password' => '',
+	'database' => 'catatandb',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
